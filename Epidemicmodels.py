@@ -1194,6 +1194,10 @@ def main():  #main program
     try:  #create table if it wasn't created yet
         c = db.cursor()
         c.execute('CREATE TABLE disease(id, name, model, attribute, beta, gamma, myu, timeratio, k, P)')
+        c.execute("INSERT INTO disease VALUES ('0', 'Ebola', 'sir', 'WV', '0.2', '0.11111111111111112', '0.003', '1', '120', '0')")
+        c.execute("INSERT INTO disease VALUES ('1', 'HIV', 'sir', 'V', '0.000136986301369863', '3.912864324853228e-05', '1.03e-05', '365', '172800', '0') ")
+        c.execute("INSERT INTO disease VALUES ('2', 'Measles', 'sir', 'VN', '0.05', '0.0033333333333333335', '0.003', '1', '480', '0.1')")
+        c.execute("INSERT INTO disease VALUES ('3', 'Seasonal Influenza', 'sis', 'WV', '0.08333333333333333', '0.05274261603375527', '0', '1', '288', '0')")
         db.commit()
     except:
         pass
